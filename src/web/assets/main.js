@@ -14,11 +14,13 @@ async function toggleNgrok() {
 
 async function updateStatus() {
     const $status = document.querySelector('h2');
-    
+    const $btn = document.querySelector('button');
+
     const response = await get('/status');
     $status.innerHTML = '<b>Status atual:</b> ' + response.message;
 
-    const $btn = document.querySelector('button');
+    $btn.style.display = 'block';
+
     switch (response.status) {
         case 'running':
             $btn.textContent = 'Parar';
