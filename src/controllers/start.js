@@ -1,6 +1,8 @@
 const ngrok = require('ngrok');
 
 const AUTH_TOKEN = Environment.NGROK_AUTHTOKEN;
+const HOST = Environment.SERVICE_HOST;
+const PORT = Environment.SERVICE_PORT;
 
 module.exports = function (context) {
     return async function (_, response) {
@@ -14,7 +16,7 @@ module.exports = function (context) {
 
             context.tunnel = await ngrok.connect({
                 authtoken: AUTH_TOKEN,
-                addr: 'localhost:8080',
+                addr: `${SERVICE_HOST}:${SERVICE_PORT}`,
                 proto: 'http'
             });
 

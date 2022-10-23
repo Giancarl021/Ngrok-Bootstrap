@@ -6,6 +6,14 @@ const ENV = [
         required: true
     },
     {
+        name: 'SERVICE_HOST',
+        required: true
+    },
+    {
+        name: 'SERVICE_PORT',
+        required: true
+    },
+    {
         name: 'PORT',
         required: false,
         defaultValue: 3000
