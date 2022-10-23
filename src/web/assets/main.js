@@ -1,5 +1,9 @@
 const context = {};
 
+function seconds(n) {
+    return n * 1000;
+}
+
 async function get(endpoint) {
     const response = await fetch(endpoint);
     return await response.json();
@@ -39,4 +43,9 @@ async function updateStatus() {
     context.status = response.status;
 }
 
-document.addEventListener('DOMContentLoaded', updateStatus);
+async function main() {
+    setInterval(updateStatus, seconds(10));
+    await updateStatus();
+}
+
+document.addEventListener('DOMContentLoaded', main);
