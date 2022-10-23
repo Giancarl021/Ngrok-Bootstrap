@@ -1,6 +1,8 @@
 const ngrok = require('ngrok');
 
-const AUTH_TOKEN = process.env.NGROK_TOKEN;
+const AUTH_TOKEN = Environment.NGROK_AUTHTOKEN;
+
+console.log(AUTH_TOKEN);
 
 module.exports = function (context) {
     return async function (_, response) {
