@@ -16,7 +16,7 @@ module.exports = function (context) {
 
             context.tunnel = await ngrok.connect({
                 authtoken: AUTH_TOKEN,
-                addr: `${SERVICE_HOST}:${SERVICE_PORT}`,
+                addr: `${HOST}:${PORT}`,
                 proto: 'http'
             });
 
